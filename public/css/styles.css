@@ -1,0 +1,158 @@
+.button1 {
+    background: #F4CE14;
+    border: 0;
+    padding: 13px 25px 13px 25px;
+    border-radius: 10px;
+}
+
+header {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    background: #fff;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    padding: 0 20%;
+}
+
+header img.logo {
+    height: 40px;
+    margin-top: 7px;
+}
+
+header img.menu-icon {
+    margin: 0 0 0 20px;
+    height: 40px;
+    margin-top: 7px;
+    display: none;
+}
+
+nav ul {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(7, auto);
+    background: #fff;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #495E57;
+    font-size: 14px;
+    font-weight: strong;
+}
+
+nav ul li a:hover {
+    color: #8eb3a6;
+}
+
+main section {
+    padding: 30px 20%;
+}
+
+main section.hero {
+    background: #495E57;
+    color: #fff;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+main section.hero .text {
+    width: 55%;
+}
+
+main section.hero .image {
+    overflow: hidden;
+    border-radius: 8px;
+    height: 300px;
+    width: 200px;
+    right: 0;
+}
+
+main section.hero h1 {
+    margin: 0;
+    color: #F4CE14;
+}
+
+main section.hero h2 {
+    margin: 0;
+}
+
+footer {
+    background: #495E57;
+    display: grid;
+    grid-template-columns: 33.3333% 33.3333% 33.3333%;
+    color: #fff;
+    padding: 20px 20%;
+}
+
+footer div h5 {
+    margin: 5px 0px;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer ul li {
+    font-size: 12px;
+    padding: 4px 0;
+    margin: 0;
+}
+
+footer ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    color: #8eb3a6;
+}
+
+@media screen and (max-width: 1000px) {
+    header {
+        padding: 0;
+    }
+
+    header img.logo, footer div {
+        margin-left: 20px;
+    }
+
+    footer {
+        padding: 20px 0;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    header {
+        padding: 3px 0;
+    }
+    header img.menu-icon {
+        display: block;
+        position: fixed;
+        right: 0;
+        margin-right: 20px;
+        color: #495E57;
+    }
+
+    nav ul {
+        display: none;
+        position: fixed;
+        right: 0;
+        margin: 48px 0 0 0;
+        text-align: center;
+        width: 150px;
+        padding: 0;
+    }
+
+    nav ul li {
+        padding: 5px;
+    }
+}
+
+@media screen and (max-width: 250px) {
+    nav ul {
+        width: 100%;
+    }
+}
