@@ -48,17 +48,17 @@ const BookingForm = (prop) => {
     }, [fetchTimeOptions]);
 
     return (
-        <form style={{"display" : "grid", "maxWidth" : "200px", "gap": "20px"}} onSubmit={(e) => submitBookingForm(e)}>
+        <form aria-label="booking form" style={{"display" : "grid", "maxWidth" : "200px", "gap": "20px"}} onSubmit={(e) => submitBookingForm(e)}>
             <label htmlFor="res-date">Choose date</label>
-            <input type="date" id="res-date" onChange={(e) => updateStateData(setDate, e)} value={date}/>
+            <input type="date" id="res-date" onChange={(e) => updateStateData(setDate, e)} value={date} required/>
             <label htmlFor="res-time">Choose time</label>
-            <select id="res-time" onChange={(e) => updateStateData(setTimes , e)} value={times}>
+            <select id="res-time" onChange={(e) => updateStateData(setTimes , e)} value={times} required>
                 {parse(timeOptions)}
             </select>
             <label htmlFor="guests">Number of guests</label>
-            <input type="number" placeholder="1" min="1" max="10" id="guests" onChange={(e) => updateStateData(setNoOfGuest, e)} value={noOfGuest}/>
+            <input type="number" placeholder="1" min="1" max="10" id="guests" onChange={(e) => updateStateData(setNoOfGuest, e)} value={noOfGuest} required/>
             <label htmlFor="occasion">Occasion</label>
-            <select id="occasion" onChange={(e) => updateStateData(setOccasion, e)} value={occasion}>
+            <select id="occasion" onChange={(e) => updateStateData(setOccasion, e)} value={occasion} required>
                 <option></option>
                 <option value="Birthday">Birthday</option>
                 <option value="Anniversary">Anniversary</option>
