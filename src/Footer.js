@@ -1,10 +1,19 @@
-import React from 'react';
+import footerImg from './img/footer.png';
+import facebookImg from './img/facebook.svg';
+import twitterImg from './img/twitter.svg';
+import youtubeImg from './img/youtube.svg';
+import addressImg from './img/address.svg';
+import phoneImg from './img/phone.svg';
+import emailImg from './img/email.svg';
 
 const Footer = () => {
     return (
         <footer>
             <div>
-                <h5>Navigation</h5>
+                <img alt="footer" src={footerImg} />
+            </div>
+            <div>
+                <h4>Navigation</h4>
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="/about">About</a></li>
@@ -14,21 +23,19 @@ const Footer = () => {
                     <li><a href="/login">Login</a></li>
                 </ul>
             </div>
-            <div>
-                <h5>Contact</h5>
+            <div className="contact">
+                <h4>Contact</h4>
                 <ul>
-                    <li>Address</li>
-                    <li>Phone Number</li>
-                    <li>Email</li>
+                    <li><img alt="address" src={addressImg} /> 18 Pike Place, Pike Place Market, WA, Seattle 98101</li>
+                    <li><img alt="phone" src={phoneImg} /> +1 919-555-8247</li>
+                    <li><img alt="email" src={emailImg} /> contact@little-lemon.com</li>
                 </ul>
             </div>
-            <div>
-                <h5>Social Media Links</h5>
-                <ul>
-                    <li>Facebook</li>
-                    <li>Instagram</li>
-                    <li>Youtube</li>
-                </ul>
+            <div className="social-media">
+                <h4>Social Media Links</h4>
+                <img alt="facebook" src={facebookImg} />
+                <img alt="twitter" src={twitterImg} />
+                <img alt="youtube" src={youtubeImg} />
             </div>
         </footer>
     );

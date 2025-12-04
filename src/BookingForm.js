@@ -63,7 +63,7 @@ const BookingForm = (prop) => {
                 <option value="Birthday">Birthday</option>
                 <option value="Anniversary">Anniversary</option>
             </select>
-            <input type="submit" value="Make Your reservation" className="button" />
+            <input type="submit" value="Book Now" className="cta-button" />
         </form>
     );
 }
