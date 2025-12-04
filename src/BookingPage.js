@@ -1,8 +1,11 @@
 import React from 'react';
+import BookingForm from './BookingForm';
 
-const BookingPage = () => {
+const BookingPage = (prop) => {
     return (
-        <></>
+        <section className="booking">
+            <BookingForm availableTimes={prop.availableTimes} setAvailableTimes={prop.setAvailableTimes}/>
+        </section>
     );
 }
 

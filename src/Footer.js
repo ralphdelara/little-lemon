@@ -6,7 +6,7 @@ const Footer = () => {
             <div>
                 <h5>Navigation</h5>
                 <ul>
-                    <li><a href="/home">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li><a href="/about">About</a></li>
                     <li><a href="/menu">Menu</a></li>
                     <li><a href="/reservations">Reservations</a></li>

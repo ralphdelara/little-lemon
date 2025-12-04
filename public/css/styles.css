@@ -74,12 +74,12 @@ main section.hero .text {
     width: 55%;
 }
 
-main section.hero .image {
+main section.hero  .image img {
     overflow: hidden;
-    border-radius: 8px;
-    height: 300px;
-    width: 200px;
-    right: 0;
+    border-radius: 20px;
+    width: 300px;
+    position: absolute;
+    margin-top: 20px;
 }
 
 main section.hero h1 {

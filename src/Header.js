@@ -6,9 +6,9 @@ import menuIcon from './img/menu-icon.svg';
 const Header = (props) => {
     return (
         <header>
-            <img class="logo" src={logo} />
+            <img className="logo" src={logo} />
             <Nav/>
-            <img class="menu-icon" src={menuIcon} />
+            <img className="menu-icon" src={menuIcon} />
         </header>
     );
 }

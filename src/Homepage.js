@@ -4,8 +4,8 @@ import heroImage from './img/hero-image.jpg';
 const Homepage = () => {
     return (
         <>
-            <section class="hero">
-                <div class="text">
+            <section className="hero">
+                <div className="text">
                     <h1>Little Lemon</h1>
                     <h2>Chicago</h2>
                     <br/>
@@ -14,15 +14,15 @@ const Homepage = () => {
                     </span>
                     <br/>
                     <br/>
-                    <button class="cta-button">Reserve a Table</button>
+                    <button className="cta-button">Reserve a Table</button>
                 </div>
-                <div class="image">
+                <div className="image">
                     <img src={heroImage} />
                 </div>
             </section>
-            <section class="specials">
+            <section className="specials">
                 This week specials
-                <button class="cta-button">Reserve a Table</button>
+                <button className="cta-button">Reserve a Table</button>
                 <div>
                     <div>Greek salad</div>
                     <div>Bruchetta</div>
