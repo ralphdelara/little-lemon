@@ -1,11 +1,11 @@
 import { useNavigate } from 'react-router';
 import heroImage from '../img/hero-image.jpg';
 
-const Hero = () => {
+const Hero = (props) => {
     const navigate = useNavigate();
 
     return (
-        <section className="hero">
+        <section className="hero" style={{backgroundImage: `url(${props.heroBg})`}}>
             <div className="text">
                 <div className="title">Little Lemon</div>
                 <div className='subtitle'>Chicago</div>

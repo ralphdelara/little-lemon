@@ -6,23 +6,39 @@ a {
     text-decoration: none;
 }
 
+select {
+    appearance: none; /* Disable the default arrow */
+    -webkit-appearance: none; /* For WebKit-based browsers */
+    -moz-appearance: none; /* For Firefox */
+    background-image: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 9L12 15L18 9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 0 center;
+    background-size: 100px;
+    cursor: pointer;
+}
+
 .cta-button {
     background: #F4CE14;
     width: 200px;
-    height: 60px;
+    height: 40px;
     border: 0;
-    border-radius: 15px;
-    box-shadow: 0px 0px 1px #000;
+    border-radius: 12px;
+    box-shadow: 0px 0px 1px #ad9208;
     font-weight: bold;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 16px;
 }
 .cta-button:hover {
-    background: #e7cf5b;
+    background: #f9e78a;
 }
 
 .cta-button:active {
     opacity: 0.8;
+}
+
+form label.radio {
+    cursor: pointer;
+    padding: 10px 0;
 }
 
 header {
@@ -56,6 +72,12 @@ header div.nav img.menu-icon {
     display: none;
 }
 
+.breadcrumbs {
+    background: #495E57;
+    color: #fff;
+    padding: 20px;
+}
+
 nav ul {
     list-style-type: none;
     display: grid;
@@ -68,10 +90,13 @@ nav ul li a {
     color: #495E57;
     font-size: 15px;
     font-weight: bold;
+    padding: 8px;
+    border-radius: 8px;
 }
 
-nav ul li a:hover {
-    color: #8eb3a6;
+nav ul li a:hover, nav ul li a.active {
+    color: #fff;
+    background: #495E57;
 }
 
 main section {
@@ -91,7 +116,6 @@ main section .subtitle {
 
 /*Hero*/
 section.hero {
-    background: #495E57;
     color: #fff;
     display: grid;
     grid-template-columns: 50% 50%;
@@ -168,7 +192,7 @@ section.specials .items .item .img-container {
 }
 
 section.specials .items .item  .img-container img {
-    height: 210px;
+    width: 120%;
 }
 
 section.specials .items .item .text {
@@ -238,6 +262,7 @@ section.testimonials .items {
 section.testimonials .items .item {
     background: #fff;
     padding: 20px;
+    border-radius: 10px;
 }
 
 section.testimonials .items .item .rating span {
@@ -340,8 +365,109 @@ footer .social-media img:hover {
     opacity: 0.5;
 }
 
-input, select {
-    font-size: 18px;
+/* Reservation */
+
+section.reservation {
+    padding: 20px 20% 40px;
+    color: #fff;
+}
+
+section.reservation .title {
+    color: #F4CE14;
+    line-height: 0.8;
+}
+
+.booking-form {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    column-gap: 50px;
+    row-gap: 10px;
+}
+
+.booking-form .seating {
+    margin-bottom: 20px;
+}
+
+section.reservation input:not(.cta-button):not([type="radio"]), section.reservation select {
+    background: #fff;
+    color: #495E57;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 8px 0;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0px 0.5px 3px #2e2e2e;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+section.reservation input[type="radio"] {
+    margin-left: 30px;
+}
+
+.reservation-photos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.reservation-photos .reservation-photo {
+    border-radius: 20px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.reservation-photos img {
+    border-radius: 20px;
+    width: 100%;
+}
+
+.reservation-submit-button {
+    margin-top: 30px;
+    text-align: center;
+}
+
+section.error {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-weight: bold;
+    font-size: 50px;
+    color: #fff;
+}
+
+@media screen and (max-width: 1200px) {
+    header {
+        padding: 20px 10%;
+    }
+
+    header div.nav img.logo, footer div {
+        margin-left: 10px;
+    }
+
+    section.hero {
+        padding: 20px 10%;
+    }
+
+    section.hero .image {
+        width: 290px;
+        max-height: 300px;
+        margin-right: 15%;
+    }
+
+    section.hero .image img {
+        width: 290px;
+    }
+
+    section.specials {
+        padding: 20px 10%;
+    }
+
+    footer {
+        padding: 20px 10%;
+    }
 }
 
 @media screen and (max-width: 1050px) {
@@ -360,7 +486,7 @@ input, select {
 
 @media screen and (max-width: 1000px) {
     header {
-        padding: 0;
+        padding: 5px 0;
     }
 
     header div.nav img.logo, footer div {
@@ -372,9 +498,8 @@ input, select {
     }
 
     section.hero .image {
-        width: 30%;
-        max-height: 300px;
-        margin-right: 5%;
+        width: 260px;
+        margin-right: 7.5%;
     }
 
     section.hero .image img {
@@ -382,6 +507,11 @@ input, select {
     }
 
     section.specials {
+        padding: 20px;
+    }
+
+    section.specials .items {
+        gap: 10px;
         padding: 20px;
     }
 
@@ -405,10 +535,13 @@ input, select {
     }
 }
 
-@media screen and (max-width: 700px) {
-    header {
-        padding: 3px 0;
+@media screen and (max-width: 800px) {
+    section.specials .items .item .img-container {
+        height: 150px;
     }
+}
+
+@media screen and (max-width: 700px) {
     header div.nav img.menu-icon {
         display: block;
         position: fixed;
@@ -428,14 +561,28 @@ input, select {
         padding: 0;
     }
 
+    nav ul.active {
+        display: block;
+    }
+
     nav ul li {
-        padding: 5px;
+        padding: 10px;
     }
 }
 
 @media screen and (max-width: 658px) {
     footer {
         grid-template-columns: repeat(3, 33.3333%);
+    }
+}
+
+@media screen and (max-width: 649px) {
+    section.hero {
+        grid-template-columns: 100%;
+    }
+
+    section.hero .image img {
+        display: none;
     }
 }
 
@@ -463,16 +610,6 @@ input, select {
     section.specials .items .item .text .order-link {
         margin-top: 20px;
         position: relative;
-    }
-}
-
-@media screen and (max-width: 595px) {
-    section.hero {
-        grid-template-columns: 100%;
-    }
-
-    section.hero .image img {
-        display: none;
     }
 }
 
@@ -529,4 +666,8 @@ input, select {
     section.specials .header .subtitle {
         font-size: 25px;
     }
+}
+
+.form input {
+
 }

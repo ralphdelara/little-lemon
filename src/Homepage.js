@@ -3,10 +3,10 @@ import Specials from './HomeComponents/Specials';
 import Testimonials from './HomeComponents/Testimonials';
 import About from './HomeComponents/About';
 
-const Homepage = () => {
+const Homepage = (props) => {
     return (
         <>
-            <Hero />
+            <Hero {...props} />
             <Specials />
             <Testimonials />
             <About />

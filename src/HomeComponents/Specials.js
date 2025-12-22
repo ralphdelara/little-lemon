@@ -7,7 +7,7 @@ import deliveryIconImg from '../img/delivery-icon.svg';
 const Specials = () => {
     return (
         <section className="specials">
-            <div class="header">
+            <div className="header">
                 <span className="title">This week specials</span>
                 <button className="cta-button online-menu">Online Menu</button>
             </div>

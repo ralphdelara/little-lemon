@@ -1,9 +1,12 @@
-import {useReducer} from 'react';
-import {BrowserRouter, Routes, Route} from 'react-router';
+import { useReducer } from 'react';
+import { Routes, Route } from 'react-router';
+
 import Homepage from './Homepage';
 import BookingPage from './BookingPage';
 import ConfirmedBooking from './ConfirmedBooking';
-import {fetchAPI} from './js/api';
+import Error404 from './Error404';
+import { fetchAPI } from './js/api';
+import heroBg from './img/hero-bg.png';
 
 const Main = () => {
     const initializeTimes = fetchAPI(new Date());
@@ -11,17 +14,16 @@ const Main = () => {
         return fetchAPI(new Date(valueToCompare));
     };
 
-    const [availableTimes , setAvailableTimes] = useReducer(updateTimes, initializeTimes);
+    const [availableTimes, setAvailableTimes] = useReducer(updateTimes, initializeTimes);
 
     return (
         <main>
-            <BrowserRouter>
-                <Routes>
-                    <Route path="/" element={<Homepage />}></Route>
-                    <Route path="/Reservation" element={<BookingPage availableTimes={availableTimes} setAvailableTimes={setAvailableTimes}  />}></Route>
-                    <Route path="/confirmed-booking" element={<ConfirmedBooking />}></Route>
-                </Routes>
-            </BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Homepage heroBg={heroBg} />} />
+                <Route path="/reservation" element={<BookingPage availableTimes={availableTimes} setAvailableTimes={setAvailableTimes} heroBg={heroBg} />} />
+                <Route path="/confirmed-booking" element={<ConfirmedBooking />} />
+                <Route path="*" element={<Error404 heroBg={heroBg} />} />
+            </Routes>
         </main>
     );
 }
