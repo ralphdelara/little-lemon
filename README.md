@@ -1,6 +1,14 @@
-# Getting Started with Create React App
+# Meta Front End Developer Capstone Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is created with [Create React App](https://github.com/facebook/create-react-app).
+
+## Project Name
+
+Little Lemon
+
+## About
+
+This project is all about online reservation, user can submit reservation details then submit. Since this is just for front end, it won't have any back end stuff like databases but i added console.log to preview the user's submitted data.
 
 ## Available Scripts
 
