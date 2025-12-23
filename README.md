@@ -8,7 +8,7 @@ Little Lemon
 
 ## About
 
-This project is all about online reservation, user can submit reservation details then submit. Since this is just for front end, it won't have any back end stuff like databases but i added console.log to preview the user's submitted data.
+This project is all about online reservation, user can submit reservation details then submit. Since this is just for front end, it won't have any back end stuff like databases but i added `console.log` to preview the user's submitted data.
 
 ## Available Scripts
 
