@@ -506,9 +506,6 @@ section.reservation select {
 section .reservation-confirmed-message {
     color: #495E57;
     background: #fff;
-    position: absolute;
-    margin: 100px 0 0 11%;
-    top: 0;
     z-index: 5;
     width: 400px;
     padding: 30px;
@@ -517,6 +514,10 @@ section .reservation-confirmed-message {
     text-align: center;
     border-radius: 8px;
     display: none;
+    position: absolute;
+    top: 37%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 section .reservation-confirmed-message.active {
@@ -652,6 +653,13 @@ section.error {
     }
 }
 
+@media screen and (max-width: 870px) {
+    section .reservation-confirmed-message {
+        width: 300px;
+        font-size: 18px;
+    }
+}
+
 @media screen and (max-width: 800px) {
     section.specials .items .item .img-container {
         height: 150px;
@@ -688,6 +696,12 @@ section.error {
 
     .booking-form {
         display: block;
+    }
+
+    section .reservation-confirmed-message {
+        width: 250px;
+        font-size: 15px;
+        padding: 10px;
     }
 }
 
@@ -765,6 +779,14 @@ section.error {
     nav ul {
         width: 100%;
     }
+
+    section .reservation-confirmed-message {
+        width: 100%;
+    }
+
+    .cta-button {
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 250px) {
@@ -793,8 +815,4 @@ section.error {
     section.specials .header .subtitle {
         font-size: 25px;
     }
-}
-
-.form input {
-
 }
