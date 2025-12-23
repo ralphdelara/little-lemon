@@ -1,4 +1,5 @@
-import aboutImg from '../img/about.png';
+import about1Img from '../img/about1.png';
+import about2Img from '../img/about2.png';
 
 const About = () => {
     return (
@@ -11,7 +12,10 @@ const About = () => {
                     Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. 
                 </div>
             </div>
-            <img alt="about" src={aboutImg} />
+            <div className="image">
+                <img alt="about" src={about1Img} />
+                <img alt="about" src={about2Img} />
+            </div>
         </section>
     );
 }

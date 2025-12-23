@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <Header uri={uri} />
-      <Main uri={uri} />
+      <Main appName={process.env.REACT_APP_NAME} />
       <Footer/>
     </>
   );

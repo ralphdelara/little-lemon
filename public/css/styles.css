@@ -6,17 +6,6 @@ a {
     text-decoration: none;
 }
 
-select {
-    appearance: none; /* Disable the default arrow */
-    -webkit-appearance: none; /* For WebKit-based browsers */
-    -moz-appearance: none; /* For Firefox */
-    background-image: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 9L12 15L18 9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></svg>');
-    background-repeat: no-repeat;
-    background-position: right 0 center;
-    background-size: 100px;
-    cursor: pointer;
-}
-
 .cta-button {
     background: #F4CE14;
     width: 200px;
@@ -101,6 +90,7 @@ nav ul li a:hover, nav ul li a.active {
 
 main section {
     padding: 40px 20%;
+    position: relative;
 }
 
 main section .title {
@@ -155,12 +145,13 @@ section.hero .cta-button {
     margin-top: 10px;
 }
 
-/* Specials*/
+/* Specials */
 section.specials {
     margin-top: 50px;
 }
 
 section.specials button.online-menu {
+    margin-top: 20px;
     float: right;
 }
 
@@ -312,8 +303,39 @@ section.about .text .description {
     margin-top: 10px;
 }
 
-section.about img {
-    width: 400px;
+section.about .image {
+    position: relative;
+}
+
+section.about .image img {
+    position: relative;
+    width: 200px;
+    border-radius: 10px;
+    box-shadow: 0.1px 0px 2px #474747;
+    transition: width 0.1s ease-out;
+}
+
+section.about .image img:hover {
+    position: relative;
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0.1px 0px 2px #474747;
+    z-index: 3;
+}
+
+section.about .image img:first-child {
+    position: absolute;
+    margin-top: -20px;
+    right: 0;
+    z-index: 2;
+}
+
+section.about div img:last-child {
+    position: absolute;
+    margin-top: 20px;
+    right: 0;
+    margin-right: 160px;
+    z-index: 1;
 }
 
 
@@ -390,22 +412,45 @@ section.reservation .title {
     margin-bottom: 20px;
 }
 
-section.reservation input:not(.cta-button):not([type="radio"]), section.reservation select {
-    background: #fff;
+section.reservation input:not(.cta-button):not([type="radio"]):not([type="checkbox"]),
+section.reservation select, section.reservation textarea {
     color: #495E57;
     font-size: 20px;
     font-weight: bold;
-    padding: 8px 0;
+    padding: 8px;
     border: 0;
     border-radius: 5px;
     box-shadow: 0px 0.5px 3px #2e2e2e;
     width: 100%;
-    text-align: center;
     margin-top: 10px;
 }
 
 section.reservation input[type="radio"] {
     margin-left: 30px;
+}
+
+input[type="date"] {
+    background-image: url('data:image/svg+xml;base64,PCEtLT94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPy0tPgo8IS0tIFN2ZyBWZWN0b3IgSWNvbnMgOiBodHRwOi8vd3d3Lm9ubGluZXdlYmZvbnRzLmNvbS9pY29uIC0tPgoKPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMjU2IDI1NiIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMjU2IDI1NiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxtZXRhZGF0YT4gU3ZnIFZlY3RvciBJY29ucyA6IGh0dHA6Ly93d3cub25saW5ld2ViZm9udHMuY29tL2ljb24gPC9tZXRhZGF0YT4KPGc+PGc+PGc+PHBhdGggZmlsbD0iIzQ5NUU1NyIgZGF0YS10aXRsZT0iTGF5ZXIgMCIgeHM9IjAiIGQ9Ik0yOC44LDU3LjZDMjEuNiw1OS4zLDE1LjMsNjQuMywxMiw3MWwtMiw0djUuN2MwLDUsMC4xLDYuMSwxLjIsOC43YzAuNywxLjYsMS45LDQsMi44LDUuMmMwLjksMS4yLDI1LjIsMjQuNyw1NC4xLDUyLjJsNTIuNCw1MGwzLjgsMS4yYzQuNiwxLjUsNy4xLDEuMywxMC4zLTAuNmMzLjItMS45LDEwNS45LTEwMC44LDEwNy45LTEwMy44YzIuNS0zLjksMy41LTcuNiwzLjUtMTIuNWMwLTcuMS0yLjItMTItNy40LTE3LjFjLTguMS03LjgtMjAuOS05LTMwLjQtMy4xYy0xLjMsMC44LTE4LjEsMTYuNy0zNy40LDM1LjNjLTM4LjUsMzcuMS0zNy44LDM2LjUtNDIuNywzNS45Yy02LTAuNi00LjcsMC41LTQyLjktMzYuMUM2Niw3Ny41LDQ5LjEsNjEuNyw0Ny44LDYwLjlDNDIuNiw1Ny42LDM0LjgsNTYuMywyOC44LDU3LjZ6Ii8+PC9nPjwvZz48L2c+Cjwvc3ZnPg==');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 15px;
+    padding: 8px 0 !important;
+    text-indent: 5px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    display: block;
+}
+
+section.reservation select {
+    appearance: none; /* Disable the default arrow */
+    -webkit-appearance: none; /* For WebKit-based browsers */
+    -moz-appearance: none; /* For Firefox */
+    background-image: url('data:image/svg+xml;base64,PCEtLT94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPy0tPgo8IS0tIFN2ZyBWZWN0b3IgSWNvbnMgOiBodHRwOi8vd3d3Lm9ubGluZXdlYmZvbnRzLmNvbS9pY29uIC0tPgoKPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMjU2IDI1NiIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMjU2IDI1NiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxtZXRhZGF0YT4gU3ZnIFZlY3RvciBJY29ucyA6IGh0dHA6Ly93d3cub25saW5ld2ViZm9udHMuY29tL2ljb24gPC9tZXRhZGF0YT4KPGc+PGc+PGc+PHBhdGggZmlsbD0iIzQ5NUU1NyIgZGF0YS10aXRsZT0iTGF5ZXIgMCIgeHM9IjAiIGQ9Ik0yOC44LDU3LjZDMjEuNiw1OS4zLDE1LjMsNjQuMywxMiw3MWwtMiw0djUuN2MwLDUsMC4xLDYuMSwxLjIsOC43YzAuNywxLjYsMS45LDQsMi44LDUuMmMwLjksMS4yLDI1LjIsMjQuNyw1NC4xLDUyLjJsNTIuNCw1MGwzLjgsMS4yYzQuNiwxLjUsNy4xLDEuMywxMC4zLTAuNmMzLjItMS45LDEwNS45LTEwMC44LDEwNy45LTEwMy44YzIuNS0zLjksMy41LTcuNiwzLjUtMTIuNWMwLTcuMS0yLjItMTItNy40LTE3LjFjLTguMS03LjgtMjAuOS05LTMwLjQtMy4xYy0xLjMsMC44LTE4LjEsMTYuNy0zNy40LDM1LjNjLTM4LjUsMzcuMS0zNy44LDM2LjUtNDIuNywzNS45Yy02LTAuNi00LjcsMC41LTQyLjktMzYuMUM2Niw3Ny41LDQ5LjEsNjEuNyw0Ny44LDYwLjlDNDIuNiw1Ny42LDM0LjgsNTYuMywyOC44LDU3LjZ6Ii8+PC9nPjwvZz48L2c+Cjwvc3ZnPg==');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 15px;
 }
 
 .reservation-photos {
@@ -430,12 +475,61 @@ section.reservation input[type="radio"] {
     text-align: center;
 }
 
+.booking-form .reservation-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.booking-form .reservation-details div:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.booking-form .reservation-details div img {
+    width:30px;
+    margin-right: 15px;
+    color:#fff;
+}
+
+.booking-form a {
+    text-decoration: underline;
+    color: #fff;
+}
+
+.booking-form a:hover {
+    color: #85a89c;
+}
+
+section .reservation-confirmed-message {
+    color: #495E57;
+    background: #fff;
+    position: absolute;
+    margin: 100px 0 0 11%;
+    top: 0;
+    z-index: 5;
+    width: 400px;
+    padding: 30px;
+    font-size: 23px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 8px;
+    display: none;
+}
+
+section .reservation-confirmed-message.active {
+    display: block;
+}
+
 section.error {
     display: grid;
     grid-template-columns: 1fr 1fr;
     font-weight: bold;
-    font-size: 50px;
+    font-size: 60px;
     color: #fff;
+    text-align: center;
 }
 
 @media screen and (max-width: 1200px) {
@@ -463,6 +557,10 @@ section.error {
 
     section.specials {
         padding: 20px 10%;
+    }
+
+    section.about {
+        padding: 70px 10%;
     }
 
     footer {
@@ -520,7 +618,17 @@ section.error {
     }
 }
 
+@media screen and (max-width: 963px) {
+    .booking-form .reservation-details div {
+        display: grid;
+    }
+}
+
 @media screen and (max-width: 860px) {
+    section.about {
+        padding: 40px 10%;
+    }
+
     section.about img {
         display: none;
     }
@@ -531,6 +639,15 @@ section.error {
     }
 
     section.about img {
+        display: none;
+    }
+
+    section.error {
+        display: block;
+        font-size: 50px;
+    }
+
+    section.error img {
         display: none;
     }
 }
@@ -567,6 +684,10 @@ section.error {
 
     nav ul li {
         padding: 10px;
+    }
+
+    .booking-form {
+        display: block;
     }
 }
 
@@ -631,6 +752,12 @@ section.error {
 @media screen and (max-width: 447px) {
     footer {
         grid-template-columns: 100%;
+    }
+}
+
+@media screen and (max-width: 439px) {
+    section.reservation .title {
+        font-size: 40px;
     }
 }
 

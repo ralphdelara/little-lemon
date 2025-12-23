@@ -3,12 +3,11 @@ import { Routes, Route } from 'react-router';
 
 import Homepage from './Homepage';
 import BookingPage from './BookingPage';
-import ConfirmedBooking from './ConfirmedBooking';
 import Error404 from './Error404';
 import { fetchAPI } from './js/api';
 import heroBg from './img/hero-bg.png';
 
-const Main = () => {
+const Main = (props) => {
     const initializeTimes = fetchAPI(new Date());
     const updateTimes = (stateData, valueToCompare) => {
         return fetchAPI(new Date(valueToCompare));
@@ -19,10 +18,9 @@ const Main = () => {
     return (
         <main>
             <Routes>
-                <Route path="/" element={<Homepage heroBg={heroBg} />} />
-                <Route path="/reservation" element={<BookingPage availableTimes={availableTimes} setAvailableTimes={setAvailableTimes} heroBg={heroBg} />} />
-                <Route path="/confirmed-booking" element={<ConfirmedBooking />} />
-                <Route path="*" element={<Error404 heroBg={heroBg} />} />
+                <Route path="/" element={<Homepage {...props} heroBg={heroBg} />} />
+                <Route path="/reservation" element={<BookingPage {...props} availableTimes={availableTimes} setAvailableTimes={setAvailableTimes} heroBg={heroBg} />} />
+                <Route path="*" element={<Error404 {...props} heroBg={heroBg} />} />
             </Routes>
         </main>
     );
